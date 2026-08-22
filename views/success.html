@@ -1,0 +1,24 @@
+{% extends 'layouts/main.html' %}
+
+{% block content %}
+<main>
+  <div class="mt-40 text-center text-success">
+    <h1>
+      <i class="far fa-check-circle"></i> 
+      Success!
+    </h1>
+  </div>
+  <div class="mt-40 text-center">
+    {% if payment_intent %}
+      <h5 class="text-secondary">{{ payment_intent.metadata.title }}</h5>
+      <div class="card box-shadow mt-20 text-left">
+        <div class="card-body">
+          <p><strong>Total charged:</strong> $<span class="amount" data-amount="{{ payment_intent.amount_received or payment_intent.amount }}"></span></p>
+          <p><strong>Payment Intent ID:</strong> {{ payment_intent.id }}</p>
+          <p><strong>Status:</strong> {{ payment_intent.status }}</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</main>
+{% endblock %}
