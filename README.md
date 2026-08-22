@@ -94,8 +94,6 @@ I started with the existing Flask app as the source of truth and added payments 
 5. Updated `/success` to retrieve and display the PaymentIntent details after redirect.
 6. Preserved the original Bootstrap-based UI so the app still feels like the provided starter project.
 
-The main challenge was balancing simplicity with a structure that can grow later. For this take-home, there is no database or order table, so the PaymentIntent metadata stores the selected item and title. In a production app, that metadata would be backed by an internal order record.
-
 ## Documentation Used
 
 - Stripe Payment Element documentation: https://docs.stripe.com/payments/payment-element
